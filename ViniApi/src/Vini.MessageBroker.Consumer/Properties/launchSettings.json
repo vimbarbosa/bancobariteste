@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "EquinoxMessageBroker.Consummer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
