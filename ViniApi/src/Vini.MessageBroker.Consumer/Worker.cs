@@ -5,17 +5,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 
 namespace EquinoxMessageBroker.Consumer
 {
     public class Worker : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
+        private readonly ILogger<Worker> _log;
         private readonly IConfiguration _configuration;
 
-        public Worker(ILogger<Worker> logger, IConfiguration configuration)
+        public Worker(ILogger<Worker> log, IConfiguration configuration)
         {
-            _logger = logger;
+            _log = log;
             _configuration = configuration;
         }
 
@@ -42,6 +43,7 @@ namespace EquinoxMessageBroker.Consumer
                             while (true)
                             {
                                 var cr = consumer.Consume(cts.Token);
+                                _log.LogInformation($"[{nameof(Worker)}][{nameof(ExecuteAsync)}]Posted|{JsonSerializer.Serialize(cr)}");
                             }
                         }
                         catch (OperationCanceledException)
@@ -52,9 +54,9 @@ namespace EquinoxMessageBroker.Consumer
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                    _log.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 }
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                _log.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(1000, stoppingToken);
             }
         }

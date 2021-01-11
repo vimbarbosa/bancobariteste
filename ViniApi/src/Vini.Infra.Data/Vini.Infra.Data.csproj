@@ -22,10 +22,4 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="NetDevPack.Identity">
-      <HintPath>..\..\..\..\Users\conta\.nuget\packages\netdevpack.identity\1.1.1\lib\netcoreapp3.1\NetDevPack.Identity.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
