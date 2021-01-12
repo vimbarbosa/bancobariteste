@@ -52,7 +52,7 @@ namespace EquinoxMessageBroker.Consumer
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     _log.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 }

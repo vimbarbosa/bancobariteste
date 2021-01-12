@@ -1,10 +1,7 @@
 ﻿using Mac.Application.Interfaces;
 using Mac.Application.Services;
 using Mac.Domain.Commands;
-using Mac.Domain.Interfaces;
 using Mac.Infra.CrossCutting.BUS;
-using Mac.Infra.Data.Context;
-using Mac.Infra.Data.Repository;
 using Mac.MessageBroker.Producer.v1;
 using FluentValidation.Results;
 using MediatR;
@@ -27,8 +24,8 @@ namespace Mac.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<SendNewHelloCommand, ValidationResult>, HelloCommandHandler>();
 
             // Infra - Data
-            services.AddScoped<IHelloRepository, HelloRepository>();
-            services.AddScoped<ViniContext>();
+            //services.AddScoped<IHelloRepository, HelloRepository>();
+            //services.AddScoped<ViniContext>();
 
             //Message Broker
             services.AddScoped<IMessageProducer, MessageProducer>();

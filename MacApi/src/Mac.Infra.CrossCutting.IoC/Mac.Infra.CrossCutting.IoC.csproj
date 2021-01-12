@@ -8,10 +8,10 @@
     <ProjectReference Include="..\Mac.Infra.CrossCutting.BUS\Mac.Infra.CrossCutting.BUS.csproj" />
     <ProjectReference Include="..\Mac.Application\Mac.Application.csproj" />
     <ProjectReference Include="..\Mac.Domain\Mac.Domain.csproj" />
-    <ProjectReference Include="..\Mac.Infra.Data\Mac.Infra.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
   </ItemGroup>
 

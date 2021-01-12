@@ -23,19 +23,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Application", "src\Mac.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Domain.Core", "src\Mac.Domain.Core\Mac.Domain.Core.csproj", "{1083DDDD-FD97-435D-8483-CBB859EF9EAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Infra.Data", "src\Mac.Infra.Data\Mac.Infra.Data.csproj", "{3FD11320-171A-49E7-B55E-9CC48124EA2C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Infra.CrossCutting.IoC", "src\Mac.Infra.CrossCutting.IoC\Mac.Infra.CrossCutting.IoC.csproj", "{05728901-DAE2-48AB-91B4-E95CA51C754D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.3 - MessageBroker", "5.3 - MessageBroker", "{FA2BE8AA-CCFF-4202-BAFB-4186D5B8B6CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mac.MessageBroker.Producer", "src/Mac.MessageBroker.Producer\Mac.MessageBroker.Producer.csproj", "{A632586D-E1D7-46DF-A1A2-78754E0E739A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.MessageBroker.Producer", "src\Mac.MessageBroker.Producer\Mac.MessageBroker.Producer.csproj", "{A632586D-E1D7-46DF-A1A2-78754E0E739A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mac.Domain.Entities", "src/Mac.Domain.Entities\Mac.Domain.Entities.csproj", "{595A1406-6887-4269-B5F0-828078A6C724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Domain.Entities", "src\Mac.Domain.Entities\Mac.Domain.Entities.csproj", "{595A1406-6887-4269-B5F0-828078A6C724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mac.Infra.CrossCutting.BUS", "src/Mac.Infra.CrossCutting.BUS\Mac.Infra.CrossCutting.BUS.csproj", "{26D7BB0E-6877-452B-AF08-473CA80FE73B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Infra.CrossCutting.BUS", "src\Mac.Infra.CrossCutting.BUS\Mac.Infra.CrossCutting.BUS.csproj", "{26D7BB0E-6877-452B-AF08-473CA80FE73B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mac.MessageBroker.Consummer", "src/Mac.MessageBroker.Consumer\Mac.MessageBroker.Consumer.csproj", "{CF76AB98-D2F7-4048-8289-8B8005F77533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.MessageBroker.Consumer", "src\Mac.MessageBroker.Consumer\Mac.MessageBroker.Consumer.csproj", "{CF76AB98-D2F7-4048-8289-8B8005F77533}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Testing", "6 - Testing", "{AFBF8CC5-8A25-4094-86E1-2646E085DEEA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mac.Application.Testing", "src\Mac.Application.Testing\Mac.Application.Testing.csproj", "{992A3E1E-6560-44BF-81E1-D5A6D4873917}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +61,6 @@ Global
 		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,6 +81,10 @@ Global
 		{CF76AB98-D2F7-4048-8289-8B8005F77533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF76AB98-D2F7-4048-8289-8B8005F77533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF76AB98-D2F7-4048-8289-8B8005F77533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992A3E1E-6560-44BF-81E1-D5A6D4873917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992A3E1E-6560-44BF-81E1-D5A6D4873917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992A3E1E-6560-44BF-81E1-D5A6D4873917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992A3E1E-6560-44BF-81E1-D5A6D4873917}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,13 +96,13 @@ Global
 		{A3BCC6A4-608E-4D01-90A7-0061A1E4580E} = {402220F9-49FB-4051-BBC5-0451D9FAADF7}
 		{A36A3A66-C03F-4B28-AD70-61AEF85A3049} = {20F3C26E-43BB-4067-B63F-EC007FF81CE5}
 		{1083DDDD-FD97-435D-8483-CBB859EF9EAB} = {402220F9-49FB-4051-BBC5-0451D9FAADF7}
-		{3FD11320-171A-49E7-B55E-9CC48124EA2C} = {9D46C671-8916-4AD3-96F2-1CAE7E96A5E5}
 		{05728901-DAE2-48AB-91B4-E95CA51C754D} = {554CAF06-5BF7-49E4-A507-002BAD928CEB}
 		{FA2BE8AA-CCFF-4202-BAFB-4186D5B8B6CA} = {08C44277-D89E-4C2F-B8F2-36B06B4C4BE6}
 		{A632586D-E1D7-46DF-A1A2-78754E0E739A} = {FA2BE8AA-CCFF-4202-BAFB-4186D5B8B6CA}
 		{595A1406-6887-4269-B5F0-828078A6C724} = {402220F9-49FB-4051-BBC5-0451D9FAADF7}
 		{26D7BB0E-6877-452B-AF08-473CA80FE73B} = {554CAF06-5BF7-49E4-A507-002BAD928CEB}
 		{CF76AB98-D2F7-4048-8289-8B8005F77533} = {FA2BE8AA-CCFF-4202-BAFB-4186D5B8B6CA}
+		{992A3E1E-6560-44BF-81E1-D5A6D4873917} = {AFBF8CC5-8A25-4094-86E1-2646E085DEEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA4494CB-C2E9-4618-9E01-F8073BC388C7}

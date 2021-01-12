@@ -10,24 +10,24 @@ using NetDevPack.Messaging;
 using Mac.MessageBroker.Producer.v1;
 using Mac.MessageBroker.Producer.v1.Message;
 using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 
 namespace Mac.Domain.Commands
 {
     public class HelloCommandHandler : CommandHandler,
-        IRequestHandler<SendNewHelloCommand, ValidationResult>
+       IRequestHandler<SendNewHelloCommand, ValidationResult>
     {
-        private readonly IHelloRepository _customerRepository;
         private readonly IMessageProducer _messageProducer;
         private readonly ILogger _logger;
         private readonly string _topicName;
         private readonly Guid _serviceId;
 
-        public HelloCommandHandler(IHelloRepository customerRepository, IConfiguration configuration, IMessageProducer messageProducer, ILogger<HelloCommandHandler> logger)
+        public HelloCommandHandler(IConfiguration configuration, IMessageProducer messageProducer, ILogger<HelloCommandHandler> logger)
         {
-            _customerRepository = customerRepository;
             _serviceId = Guid.NewGuid();
             _topicName = configuration.GetSection("Queues:Producer").Value;
             _messageProducer = messageProducer;
+            _logger = logger;
         }
 
         public async Task<ValidationResult> Handle(SendNewHelloCommand message, CancellationToken cancellationToken)
@@ -47,12 +47,13 @@ namespace Mac.Domain.Commands
 
         private void TimeElapsed(object sender, System.Timers.ElapsedEventArgs e, HelloMessage message)
         {
-             _messageProducer.SendMessageAsync(_topicName,  message).Wait();
+            _logger.LogInformation($"[{nameof(HelloCommandHandler)}][{nameof(TimeElapsed)}]Posted|{JsonSerializer.Serialize(message)}");
+            _messageProducer.SendMessageAsync(_topicName, message).Wait();
         }
 
         public void Dispose()
         {
-            _customerRepository.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }

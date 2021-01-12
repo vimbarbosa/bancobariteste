@@ -1,4 +1,4 @@
-﻿using Vini.Infra.CrossCutting.IoC;
+﻿using Mac.Infra.CrossCutting.IoC;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -7,9 +7,9 @@ using Autofac;
 using System.Reflection;
 using MediatR;
 using AutoMapper;
-using Vini.Application.AutoMapper;
+using Mac.Application.AutoMapper;
 
-namespace Vini.Application.Testing.InjectionModules
+namespace Mac.Application.Testing.InjectionModules
 {
     public class IocModuleApplicationTest : Autofac.Module
     {
@@ -18,11 +18,12 @@ namespace Vini.Application.Testing.InjectionModules
             string projectPath = AppDomain.CurrentDomain.BaseDirectory.Split(new string[] { @"bin\" }, StringSplitOptions.None)[0];
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(projectPath)
-                //.AddJsonFile("appsetting.Development.json")
+                .AddJsonFile("appsettings.json")
                 .Build();
 
             containerBuilder.Register(context => configuration).As<IConfiguration>();
             var services = new ServiceCollection();
+
             NativeInjectorBootStrapper.RegisterServices(services);
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddLogging();

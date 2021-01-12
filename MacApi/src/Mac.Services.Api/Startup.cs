@@ -33,9 +33,6 @@ namespace Mac.Services.API
             // WebAPI Config
             services.AddControllers();
 
-            // Setting DBContexts
-            services.AddDatabaseConfiguration(Configuration);
-
             // AutoMapper Settings
             services.AddAutoMapperConfiguration();
 
